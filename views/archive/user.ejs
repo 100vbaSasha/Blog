@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="<%= assetFingerprint('/stylesheets/styles.css') %>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo"></a>
+            <ul class="menu">
+                <li><a href="/">Hello</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="main">
+        <div class="container">
+            <div class="content">
+                <% for(let i = 0; i < posts.length; i++) { %>
+                    <div class="post">
+                        <div class="top">
+                            <h2>
+                                <a href="/posts/<%= posts[i].url %>"><%= posts[i].title %></a>
+                            </h2>
+                        </div>
+                        <div class="body">
+                            <p><%= posts[i].body %></p>
+                        </div>
+                        <div class="bottom">
+                            <div class="author">
+                               
+                            </div>
+                            <a href="/">Комментарий</a>
+                        </div>
+                    </div>
+                    <% } %>
+                <div class="pagination">
+                    <% if(current > 2) { %>
+                        <a href="/users/<%=_user.login %>/<%= Number(current) - 1 %>" class="new">К новым ←</a>
+                        <% } %>
+                    <% if(current == 2) { %>
+                        <a href="/users/<%=_user.login %>/" class="new">На первую</a>
+                        <% } %>
+                    <% if(pages > 0 && current < pages) { %>
+                        <a href="/users/<%=_user.login %>/<%= Number(current) + 1 %>" class="old">К старым →</a>
+                        <% } %>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="box auth">
+                    <% if(!user.id && !user.login) { %>
+
+                    <form method="post" class="login">
+                        <h2>Вход</h2>
+                        <div class="form-group">
+                            <label for="login-login">Логин</label>
+                            <input type="text" id="login-login" name="login" />
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Пароль</label>
+                            <input type="password" id="login-password" name="password" />
+                        </div>
+                        <div class="buttons">
+                            <button class="switch-button secondary-inverse">Регестрация</button>
+                            <button class="login-button">Войти</button>
+                        </div>
+                    </form>
+
+                    <form method="post" class="register">
+                        <h2>Регистрация</h2>
+                        <div class="form-group">
+                            <label for="register-login">Логин</label>
+                            <input type="text" id="register-login" name="login" />
+                        </div>
+                        <div class="form-group">
+                            <label for="register-name">Имя</label>
+                            <input type="text" id="register-name" name="name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="register-surname">Фамилия</label>
+                            <input type="text" id="register-surname" name="surname" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Пароль</label>
+                            <input type="password" id="register-password" name="password" />
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password-confirm">Повторите пароль</label>
+                            <input type="password" id="register-password-confirm" name="passwordConfirm" />
+                        </div>
+                        <div class="buttons">
+                            <button class="switch-button secondary-inverse">Вход</button>
+                            <button class="register-button">Регистрация</button>
+                        </div>
+                    </form>
+                    <% } else { %>
+                        <p>
+                            Привет, <%= user.login %>! <a href="/api/auth/logout">Выход</a>
+                        </p>
+                    <% } %>
+                </div>
+                <div class="box">
+                    box
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+          footer
+      </div>
+    </footer>
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="<%= assetFingerprint('/javascripts/scripts.js') %>"></script>
+</body>
+</html>

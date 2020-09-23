@@ -194,6 +194,13 @@ input.error, textarea.error, div.error {
   input.error::placeholder, textarea.error::placeholder, div.error::placeholder {
     color: #f77963; }
 
+a, .link, .a {
+  color: #08aef1;
+  text-decoration: none;
+  cursor: pointer; }
+  a:hover, .link:hover, .a:hover {
+    text-decoration: underline; }
+
 @-webkit-keyframes medium-editor-image-loading {
   0% {
     -webkit-transform: scale(0);
@@ -806,3 +813,47 @@ body {
       padding-right: 12px; }
   .auth .register {
     display: none; }
+
+.comments {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #e8e8e8;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border-radius: 2px; }
+  .comments h2 {
+    margin-top: 0; }
+  .comments form.comment {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 500px; }
+    .comments form.comment textarea {
+      margin-bottom: 12px; }
+    .comments form.comment .buttons {
+      -webkit-align-self: flex-end;
+          -ms-flex-item-align: end;
+              align-self: flex-end;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+      .comments form.comment .buttons button {
+        margin-left: 15px;
+        height: 24px;
+        font-size: 0.9em; }
+  .comments .comment-list ul {
+    list-style: none;
+    border-left: 1px solid #e8e8e8;
+    padding-left: 18px; }
