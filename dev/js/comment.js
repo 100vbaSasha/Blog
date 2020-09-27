@@ -1,5 +1,8 @@
 $(function() {
     let commentForm;
+    function refreshPage(){
+        window.location.reload();
+    } 
 
     //add form
     $('#new, #reply').on('click', function () {
@@ -52,5 +55,6 @@ $(function() {
                 $(location).attr('href', '/');
             }
         });
+        refreshPage();
     });
 });

@@ -27,12 +27,17 @@
                     </div>
                     <div class="form-group">
                         <label for="post-body">Текст</label>
-                        <div id="post-body"></div>
+                        <textarea id="post-body"></textarea>
                     </div>
                     <div class="buttons">
                         <button class="save-button secondary-inverse">Сохранить как черновик</button>
                         <button class="publish-button">Опубликовать</button>
                     </div>
+                </form>
+
+                <form method="POST" enctype="multipart/form-data" id="fileinfo">
+                    <input type="file" name="file" id="file" required />
+                    <button class="upload-button">Загрузить</button>
                 </form>
             </div>
             <div class="sidebar">
@@ -83,9 +88,11 @@
                         </div>
                     </form>
                     <% } else { %>
-                        <p>
-                            Привет, <%= user.login %>! <a href="/api/auth/logout">Выход</a>
-                        </p>
+                        <ul>
+                            <li>Привет, <a href="/users/<%= user.login %>"><%= user.login %> !</a></li>
+                            <li><a href="/post/add">Добавить пост</a></li>
+                            <li><a href="/api/auth/logout">Выйти</a></li>
+                        </ul>
                     <% } %>
                 </div>
                 <div class="box">
