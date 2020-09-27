@@ -51,10 +51,11 @@ $(function() {
                     });
                 }
             } else {
-                //$('.register h2').after('<p class="success">Отлично!</p>');
+                //$('.register h2').after('<p class="success">Success!</p>');
                 $(location).attr('href', '/');
             }
+            refreshPage();
         });
-        refreshPage();
+        
     });
 });
