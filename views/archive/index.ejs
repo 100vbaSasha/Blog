@@ -31,20 +31,20 @@
                         </div>
                         <div class="bottom">
                             <div class="author">
-                                Автор: <a href="/users/<%= posts[i].owner.login %>"><%= posts[i].owner.login %></a>
+                                Author: <a href="/users/<%= posts[i].owner.login %>"><%= posts[i].owner.login %></a>
                             </div>
                         </div>
                     </div>
                     <% } %>
                 <div class="pagination">
                     <% if(current > 2) { %>
-                        <a href="/archive/<%= Number(current) - 1 %>" class="new">К новым ←</a>
+                        <a href="/archive/<%= Number(current) - 1 %>" class="new">Previous ←</a>
                         <% } %>
                     <% if(current == 2) { %>
-                        <a href="/" class="new">На главную</a>
+                        <a href="/" class="new">On main</a>
                         <% } %>
                     <% if(pages > 0 && current < pages) { %>
-                        <a href="/archive/<%= Number(current) + 1 %>" class="old">К старым →</a>
+                        <a href="/archive/<%= Number(current) + 1 %>" class="old"> →</a>
                         <% } %>
                 </div>
             </div>
