@@ -34,9 +34,13 @@
 
     .comment-list {
         ul {
-            list-style: none;
+            list-style: disc;
             border-left: 1px solid $greyColor;
             padding-left: $freeSpace * 1.2;
+            li{
+                margin-bottom: 20px;
+                margin-left: 5px;
+            }
         }
     }
 }

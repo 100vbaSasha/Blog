@@ -529,6 +529,9 @@ body {
         height: 24px;
         font-size: 0.9em; }
   .comments .comment-list ul {
-    list-style: none;
+    list-style: disc;
     border-left: 1px solid #e8e8e8;
     padding-left: 18px; }
+    .comments .comment-list ul li {
+      margin-bottom: 20px;
+      margin-left: 5px; }
