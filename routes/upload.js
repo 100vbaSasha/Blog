@@ -32,10 +32,10 @@ router.post('/image', (req, res) => {
         let error = '';
         if(err) {
             if(err.code === 'LIMIT_FILE_SIZE') {
-                error = "Картинка не более 2mb"
+                error = "The picture must be no more than 2 mb"
             }
             if(err.code === 'EXTENTION') {
-                error = "Только jpeg и png"
+                error = "Only jpeg and png"
             }
         }
         res.json({
