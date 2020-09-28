@@ -72,14 +72,14 @@ router.post('/register', (req, res) => {
                         console.log(err);
                         res.json({
                             ok: false,
-                            error: 'Ошибка, попробуйте позже!'
+                            error: 'Error, please try again later!'
                         })
                     })
                 });
             } else {
                 res.json({
                     ok: false,
-                    error: 'Имя занято!',
+                    error: 'Try another login!',
                     fields: ['login']
                 });
             }
@@ -98,7 +98,7 @@ router.post('/login', (req, res) => {
         if(!password) fields.push('password');
         res.json({
             ok: false,
-            error: 'Все поля должны быть заполнены!',
+            error: 'All fields must be filled!',
             fields
         });
 
