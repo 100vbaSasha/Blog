@@ -28,13 +28,13 @@
                     </div>
                     <div class="bottom">
                          <div class="author">
-                            Автор: <a href="/">Lorem</a>
+                            Author: <a href="/">Lorem</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="comments" id="<%= post.id %>">
-                    <h3>Комментарии</h3>
+                    <h3>Comments</h3>
                     <div class="comment-list">
                         
                         <% if (comments.length) { %>
@@ -59,12 +59,12 @@
                             </ul>
                             <% } %>
 
-                        <span class="link" id="new">Оставить комментарий</span>
+                        <span class="link" id="new">Leave a comment</span>
                         <form class="comment">
                             <textarea name="body"></textarea>
                             <div class="buttons">
-                                <button class="cancel secondary">Отмена</button>
-                                <button class="send">Отправить</button>
+                                <button class="cancel secondary">Cancel</button>
+                                <button class="send">Send</button>
                             </div>
                         </form>
                     </div>
@@ -75,21 +75,21 @@
                 <div class="box auth">
                     <% if(!user.id && !user.login) { %>
 
-                    <form method="post" class="login">
-                        <h2>Вход</h2>
-                        <div class="form-group">
-                            <label for="login-login">Логин</label>
-                            <input type="text" id="login-login" name="login" />
-                        </div>
-                        <div class="form-group">
-                            <label for="login-password">Пароль</label>
-                            <input type="password" id="login-password" name="password" />
-                        </div>
-                        <div class="buttons">
-                            <button class="switch-button secondary-inverse">Регестрация</button>
-                            <button class="login-button">Войти</button>
-                        </div>
-                    </form>
+                        <form method="post" class="login">
+                            <h2>Log in</h2>
+                            <div class="form-group">
+                                <label for="login-login">Login</label>
+                                <input type="text" id="login-login" name="login" />
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" id="login-password" name="password" />
+                            </div>
+                            <div class="buttons">
+                                <button class="switch-button secondary-inverse">Registration</button>
+                                <button class="login-button">Log in</button>
+                            </div>
+                        </form>
 
                     <form method="post" class="register">
                         <h2>Регистрация</h2>
