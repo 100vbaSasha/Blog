@@ -21,32 +21,32 @@ router.post('/register', (req, res) => {
         if(!passwordConfirm) fields.push('passwordConfirm');
         res.json({
             ok: false,
-            error: 'Все поля должны быть заполнены!',
+            error: 'All fields must be filled!',
             fields
         });
 
     } else if (!/^[a-zA-Z0-0]+$/.test(login)){ //login has only numbers and latin words
         res.json({
             ok: false,
-            error: 'Только латинские буквы и цифры!',
+            error: 'Try another login!',
             fields: ['login']
         });
     }else if (login.length < 3 || login.length > 16) {
         res.json({
             ok: false,
-            error: 'Длина логина от 3 до 16 символов!',
+            error: 'Login length must be from 3 to 16 characters!',
             fields: ['login']
         });
     } else if(password !== passwordConfirm) {
         res.json({
             ok: false,
-            error: 'Пароли не совпадают!',
+            error: 'Passwords do not match!',
             fields: ['password', 'passwordConfirm']
         });
     } else if(password.length < 5) {
         res.json({
             ok: false,
-            error: 'Минимальная длина пароля 5 символов!',
+            error: 'The minimum password length is 5 characters!',
             fields: ['password']
         });
     } else {
