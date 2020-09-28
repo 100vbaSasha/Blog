@@ -38,19 +38,19 @@ router.post('/add', (req, res) => {
             if(!body) fields.push('body');
             res.json({
                 ok: false,
-                error: 'Все поля должны быть заполнены!',
+                error: 'All fields must be filled!',
                 fields
             });
         } else if (title.length < 3 || title.length > 64) {
             res.json({
                 ok: false,
-                error: 'Длина заголовка от 3 до 64 символов!',
+                error: 'Title length must be from 3 to 64 characters!',
                 fields: ['title']
             });
         } else if (body.length < 3) {
             res.json({
                 ok: false,
-                error: 'Текст не менее 3 символов!',
+                error: 'Text must be at least 3 characters!',
                 fields: ['title']
             });
         } else {

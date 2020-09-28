@@ -109,7 +109,7 @@ router.post('/login', (req, res) => {
             if(!user) {
                 res.json({
                     ok: false,
-                    error: 'Логин и пароль неверны!',
+                    error: 'Login and password are incorrect!',
                     fields: ['login', 'password']
                 });
             } else {
@@ -117,7 +117,7 @@ router.post('/login', (req, res) => {
                     if(!result) {
                         res.json({
                             ok: false,
-                            error: 'Логин и пароль неверны!',
+                            error: 'Login and password are incorrect!',
                             fields: ['login', 'password']
                         });
                     } else {
@@ -134,7 +134,7 @@ router.post('/login', (req, res) => {
             console.log(err);
             res.json({
                 ok: false,
-                error: 'Ошибкаб попробуйте позже!'
+                error: 'Error, please try again later!'
             })
         })
     }
